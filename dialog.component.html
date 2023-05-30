@@ -1,0 +1,61 @@
+<div mat-dialog-title>
+  <h1 class="header">User Form</h1>
+</div>
+<form [formGroup] = "userForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>User Name</mat-label>
+        <input matInput type="text" placeholder="Mohamed" formControlName="userName">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Age</mat-label>
+        <input matInput type="text" placeholder="Age" formControlName="age">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Ex. test@gmail.com" formControlName="email">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input matInput type="text" placeholder="Ex.0122929228" formControlName="phoneNumber">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Babies</mat-label>
+        <input matInput placeholder="Ex. 4" type="number" formControlName="babies">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Date of birth</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dob">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="address">
+        <mat-label>Address</mat-label>
+        <input matInput type="text" placeholder="Enter Your Address" formControlName="address">
+      </mat-form-field>
+    </div>
+  </div>
+
+
+  <!-- <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>User Name</mat-label>
+      <input type="file" >
+    </mat-form-field>
+  </div> -->
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button   mat-raised-button color="primary" type="submit" > submit</button>
+  </div>
+</form>
